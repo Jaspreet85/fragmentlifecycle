@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FragmentLifeCycle</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onattach_fragment">OnAttach Fragment</string>
+    <string name="oncreate_fragment">OnCreate Fragment</string>
+    <string name="oncreate_view_fragment">OnCreateView Fragment</string>
+    <string name="on_view_create_fragment">OnViewCreate Fragment</string>
+    <string name="onstart_fragment">OnStart Fragment</string>
+    <string name="onresume_fragment">OnResume Fragment</string>
+    <string name="onpause_fragment">OnPause Fragment</string>
+    <string name="onstop_fragment">OnStop Fragment</string>
+    <string name="ondestroy_view_fragment">OnDestroyView Fragment</string>
+    <string name="ondetach_fragment">OnDetach Fragment</string>
+
+
+</resources>
