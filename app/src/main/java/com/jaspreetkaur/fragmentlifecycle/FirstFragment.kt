@@ -21,85 +21,68 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FirstFragment : Fragment(){
+    lateinit var mainactivity: MainActivity
+    lateinit var binding : FragmentFirstBinding
 
     override fun onAttach(context: Context) {
-        Toast.makeText(mainActivity,resources.getString(R.string.onattach_fragment), Toast.LENGTH_LONG).show()
-
         super.onAttach(context)
+        mainactivity = activity as MainActivity
+        Toast.makeText(mainactivity,resources.getString(R.string.onattach_fragment), Toast.LENGTH_LONG).show()
     }
 
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    lateinit var binding : FragmentFirstBinding
-    lateinit var mainActivity: MainActivity
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        Toast.makeText(mainActivity, resources.getString(R.string.oncreate_fragment), Toast.LENGTH_LONG).show()
         super.onCreate(savedInstanceState)
-
+        Toast.makeText(mainactivity, resources.getString(R.string.oncreate_fragment), Toast.LENGTH_LONG).show()
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        Toast.makeText(mainActivity, resources.getString(R.string.oncreate_view_fragment), Toast.LENGTH_LONG).show()
+        Toast.makeText(mainactivity, resources.getString(R.string.oncreate_view_fragment), Toast.LENGTH_LONG).show()
         binding = FragmentFirstBinding.inflate(layoutInflater)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Toast.makeText(mainActivity, resources.getString(R.string.on_view_create_fragment),Toast.LENGTH_LONG).show()
+        super.onViewCreated(view, savedInstanceState)
+        Toast.makeText(mainactivity, resources.getString(R.string.on_view_create_fragment),Toast.LENGTH_LONG).show()
         binding.tvFrag.setOnClickListener {
             var bundle = Bundle()
             bundle.putString("Test", "testing")
             findNavController().navigate(R.id.action_firstFragment_to_secondFragment, bundle)
         }
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
-  /*      override fun onStart() {
-            Toast.makeText(mainActivity, resources.getString(R.string.onstart_fragment), Toast.LENGTH_LONG).show()
-
-            super.onStart()
-
+      override fun onStart() {
+          super.onStart()
+          Toast.makeText(mainactivity, resources.getString(R.string.onstart_fragment), Toast.LENGTH_LONG).show()
         }
 
         override fun onResume() {
-            Toast.makeText(mainActivity, resources.getString(R.string.onresume_fragment), Toast.LENGTH_LONG).show()
             super.onResume()
-
+            Toast.makeText(mainactivity, resources.getString(R.string.onresume_fragment), Toast.LENGTH_LONG).show()
         }
 
          override fun onPause() {
-             Toast.makeText(mainActivity, resources.getString(R.string.onpause_fragment), Toast.LENGTH_LONG).show()
              super.onPause()
-
+             Toast.makeText(mainactivity, resources.getString(R.string.onpause_fragment), Toast.LENGTH_LONG).show()
          }
 
          override fun onStop() {
-             Toast.makeText(mainActivity, resources.getString(R.string.onstop_fragment), Toast.LENGTH_LONG).show()
              super.onStop()
-
+             Toast.makeText(mainactivity, resources.getString(R.string.onstop_fragment), Toast.LENGTH_LONG).show()
          }
 
     override fun onDestroy() {
-        Toast.makeText(mainActivity, resources.getString(R.string.ondestroy_view_fragment), Toast.LENGTH_LONG).show()
         super.onDestroy()
-
+        Toast.makeText(mainactivity, resources.getString(R.string.ondestroy_view_fragment), Toast.LENGTH_LONG).show()
     }
 
     override fun onDetach() {
-        Toast.makeText(mainActivity, resources.getString(R.string.ondetach_fragment), Toast.LENGTH_LONG).show()
-
         super.onDetach()
-
+        Toast.makeText(mainactivity, resources.getString(R.string.ondetach_fragment), Toast.LENGTH_LONG).show()
     }
 
-*/
+
 
 companion object {
         /**

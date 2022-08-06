@@ -14,7 +14,7 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/activity_nav"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        tools:ignore="MissingClass" />
+        />
 
 
 </LinearLayout>
